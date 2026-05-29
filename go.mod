@@ -1,4 +1,4 @@
-module db
+module github.com/iambronnix/db
 
 go 1.26.3
 
