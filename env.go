@@ -1,4 +1,4 @@
-package env
+package db
 import (
 	"errors"
 	"fmt"
