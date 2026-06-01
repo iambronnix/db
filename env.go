@@ -9,6 +9,7 @@ import (
 var (
 	envERR = errors.New("error loading DB details")
 )
+
 func Config()(string, error){
 	err := u.Load()
 	if err != nil{
