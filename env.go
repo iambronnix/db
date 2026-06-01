@@ -14,8 +14,8 @@ func Config()(string, error){
 	if err != nil{
 		log.Fatal(envERR)
 	}
-	dbCreds := fmt.Sprintf("user=%s password=%s host=%s port=%s dbname=%s sslmode=disable",
-	os.Getenv("DB_USER"),
+	dbCreds := fmt.Sprintf("postgres://%s:%s@%s:%d/%s?sslmode=disable",
+	os.Getenv("DB_USER")
 	os.Getenv("DB_PASSWORD"),
 	os.Getenv("DB_HOST"),
 	os.Getenv("DB_PORT"),
