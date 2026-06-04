@@ -5,24 +5,16 @@ import (
 	"log"
 	"os"
 	u "github.com/joho/godotenv"
-)
-var (
-	envERR = errors.New("error loading DB details")
-)
-
-func Config()(string, error){
-	err := u.Load()
-	if err != nil{
-		return envERR
-	}//postgres://username:password@localhost:5432/dbname?sslmode=disable
-	dbCreds := fmt.Sprintf("user=%s password=%s host=%s port=%s dbname=%s sslmode=disable",
-						   os.Getenv("DB_USER"),
-						   os.Getenv("DB_PASSWORD"),
-						   os.Getenv("DB_HOST"),
-						   os.Getenv("DB_PORT"),
-						   os.Getenv("DB_NAME")
-)
-return dbCreds, nil
-}
-// suspect there exist a bug in this package
-
+  )
+ func Config()(string, error){
+	 if loadErr := u.Load();loadErr!=nil{
+	 log.Fatal(loadErr)}
+	 dbCreds := fmt.Sprintf("user=%s password=%s host=%s port=%s dbname=%s sslmode=disable",
+	 os.Getenv("DB_USER"),
+	 os.Getenv("DB_PASSWORD"),
+	 os.Getenv("DB_HOST"),
+	 os.Getenv("DB_PORT"),
+	 os.Getenv("DB_NAME"),
+ )
+ return dbCreds, nil
+ } 
