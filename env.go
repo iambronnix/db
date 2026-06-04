@@ -13,7 +13,7 @@ var (
 func Config()(string, error){
 	err := u.Load()
 	if err != nil{
-		log.Fatal(envERR)
+		return envERR
 	}//postgres://username:password@localhost:5432/dbname?sslmode=disable
 	dbCreds := fmt.Sprintf("user=%s password=%s host=%s port=%s dbname=%s sslmode=disable",
         os.Getenv("DB_USER"),
