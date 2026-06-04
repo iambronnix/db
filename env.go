@@ -1,10 +1,7 @@
 package db
 
 import (
-<<<<<<< HEAD
 	"database/sql"
-=======
->>>>>>> refs/remotes/origin/main
 	"fmt"
 	"log"
 	"os"
