@@ -1,6 +1,5 @@
 package db
 import (
-	"errors"
 	"fmt"
 	"log"
 	"os"
