@@ -28,10 +28,8 @@ func Config() (*sql.DB, error) {
 	defer func() {
 		for {
 		pingErr := db.Ping()
-			if  pingErr != nil { //something to fix here :either recover or scrap the whole infinite loop
-				log.Fatal("....Connection has dropped.....")
-				db.Close()
-
+			if  pingErr != nil{
+				return //abort connection and retry
 			}else{
 				break
 			}
